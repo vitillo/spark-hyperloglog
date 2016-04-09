@@ -21,7 +21,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.{FlatSpec, Matchers}
 
 class HyperLogLogTest extends FlatSpec with Matchers{
- "Test" can "test" in {
+ "Algebird's HyperLogLog" can "be used from Spark" in {
   val sparkConf = new SparkConf().setAppName("HyperLogLog")
   sparkConf.setMaster(sparkConf.get("spark.master", "local[1]"))
 
@@ -34,7 +34,7 @@ class HyperLogLogTest extends FlatSpec with Matchers{
   sqlContext.udf.register("hll_create", hllCreate _)
   sqlContext.udf.register("hll_cardinality", hllCardinality _)
 
-  val frame = sc.parallelize(List("a", "b", "c", "c")).toDF("id")
+  val frame = sc.parallelize(List("a", "b", "c", "c"), 4).toDF("id")
   val count = frame
     .select(expr("hll_create(id, 12) as hll"))
     .groupBy()
