@@ -5,7 +5,6 @@ cache:
     - $HOME/.ivy2
 matrix:
   include:
-    # Spark 1.6.0
     - jdk: openjdk7
       scala: 2.10.5
       env: TEST_SPARK_VERSION="1.6.0"
