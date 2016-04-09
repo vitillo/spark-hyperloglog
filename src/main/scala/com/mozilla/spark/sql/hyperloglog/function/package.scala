@@ -20,7 +20,7 @@ package object function {
     HyperLogLog.fromBytes(hll).approximateSize.estimate
   }
 
-  // See https://github.com/twitter/algebird/blob/0.10.0/algebird-core/src/main/scala/com/twitter/algebird/HyperLogLog.scala#L194-L210
+  // See algebird-core/src/main/scala/com/twitter/algebird/HyperLogLog.scala#L194-L210
   // E.g. 12 bits corresponds to an error of 0.0163
   def hllCreate(x: String, bits: Int): Array[Byte] = {
     val monoid = new HyperLogLogMonoid(bits)
