@@ -14,7 +14,6 @@
 package com.mozilla.spark.sql.hyperloglog
 
 import com.twitter.algebird.{HyperLogLog, HyperLogLogMonoid}
-import org.apache.spark.sql.functions.udf
 
 package object function {
   def hllCardinality(hll: Array[Byte]): Long = {
@@ -27,7 +26,4 @@ package object function {
     val monoid = new HyperLogLogMonoid(bits)
     HyperLogLog.toBytes(monoid.toHLL(x))
   }
-
-  val hllCardinalityUDF = udf(hllCardinality _)
-  val hllCreateUDF = udf(hllCreate _)
 }

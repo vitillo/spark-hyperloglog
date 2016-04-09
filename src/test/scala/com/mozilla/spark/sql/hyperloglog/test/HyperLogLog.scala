@@ -35,7 +35,11 @@ class HyperLogLogTest extends FlatSpec with Matchers{
   sqlContext.udf.register("hll_cardinality", hllCardinality _)
 
   val frame = sc.parallelize(List("a", "b", "c", "c")).toDF("id")
-  val hll = frame.select(expr("hll_create(id, 12) as hll")).groupBy().agg(expr("hll_merge(hll) as hll"))
-  hll.select(expr("hll_cardinality(hll)")).collect()(0)(0) should be (3)
+  val count = frame
+    .select(expr("hll_create(id, 12) as hll"))
+    .groupBy()
+    .agg(expr("hll_cardinality(hll_merge(hll)) as count"))
+    .collect()
+  count(0)(0) should be (3)
  }
 }
