@@ -6,7 +6,7 @@ HyperLogLog sets between Spark and Presto.
 ### Example usage
 ```scala
 import com.mozilla.spark.sql.hyperloglog.aggregates._
-import com.mozilla.spark.sql.hyperloglog.function._
+import com.mozilla.spark.sql.hyperloglog.functions._
 
 val hllMerge = new HyperLogLogMerge
 sqlContext.udf.register("hll_merge", hllMerge)

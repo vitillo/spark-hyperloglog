@@ -14,7 +14,7 @@
 package com.mozilla.spark.sql.hyperloglog.test
 
 import com.mozilla.spark.sql.hyperloglog.aggregates._
-import com.mozilla.spark.sql.hyperloglog.function._
+import com.mozilla.spark.sql.hyperloglog.functions._
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.functions._
 import org.apache.spark.{SparkConf, SparkContext}

@@ -15,7 +15,7 @@ package com.mozilla.spark.sql.hyperloglog
 
 import com.twitter.algebird.{HyperLogLog, HyperLogLogMonoid}
 
-package object function {
+package object functions {
   def hllCardinality(hll: Array[Byte]): Long = {
     HyperLogLog.fromBytes(hll).approximateSize.estimate
   }
