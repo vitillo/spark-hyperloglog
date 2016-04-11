@@ -3,6 +3,9 @@ Algebird's HyperLogLog support for Apache Spark. This package can be used in con
 with [presto-hyperloglog](https://github.com/vitillo/presto-hyperloglog) to share
 HyperLogLog sets between Spark and Presto.
 
+[![Build Status](https://travis-ci.org/vitillo/spark-hyperloglog.svg?branch=master)](https://travis-ci.org/vitillo/spark-hyperloglog)
+[![codecov.io](https://codecov.io/github/vitillo/spark-hyperloglog/coverage.svg?branch=travis)](https://codecov.io/github/vitillo/spark-hyperloglog?branch=travis)
+
 ### Example usage
 ```scala
 import com.mozilla.spark.sql.hyperloglog.aggregates._
