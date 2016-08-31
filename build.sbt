@@ -1,6 +1,6 @@
 name := "spark-hyperloglog"
 
-version := "1.0.2"
+version := "1.0.3"
 
 scalaVersion := "2.10.6"
 
@@ -11,7 +11,7 @@ sparkVersion := "1.6.0"
 sparkComponents ++= Seq("core", "sql")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.1",
+  "org.scalatest" %% "scalatest" % "2.2.1" % "test",
   "com.twitter" %% "algebird-core" % "0.12.0"
 )
 
