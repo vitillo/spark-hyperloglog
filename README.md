@@ -34,3 +34,15 @@ yields:
 +-----+
 ```
 
+### Deployment
+1. Install the [sbt plugin](https://github.com/databricks/sbt-spark-package) for Spark Packages.
+
+2. Configure your credentials for the Spark Packages repository in `~/.ivy2/.sbtcredentials`, e.g:
+   ```
+   realm=Spark Packages Realm
+   host=spark-packages.org
+   user=foo
+   password=bar
+   ```
+
+3. Publish a new release with `sbt spPublish`
