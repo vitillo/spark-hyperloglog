@@ -34,3 +34,13 @@ yields:
 +-----+
 ```
 
+### Deployment
+1. Configure your credentials for the Spark Packages repository in `~/.ivy2/.sbtcredentials`, e.g:
+   ```
+   realm=Spark Packages Realm
+   host=spark-packages.org
+   user=foo
+   password=bar
+   ```
+
+2. Publish a new release with `sbt spPublish`
